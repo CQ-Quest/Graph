@@ -34,17 +34,17 @@
 //    {
 //        p = que.top();
 //        que.pop();
-//        if(p.counts>k)                  //Èç¹û³öÏÖ×ªÍä´ÎÊı´óÓÚK£¬Ôò´ú±íÎŞ·¨ÔÚ´ÎÊıÏŞÖÆÄÚµ½´ïÖÕµã
+//        if(p.counts>k)                  //å¦‚æœå‡ºç°è½¬å¼¯æ¬¡æ•°å¤§äºKï¼Œåˆ™ä»£è¡¨æ— æ³•åœ¨æ¬¡æ•°é™åˆ¶å†…åˆ°è¾¾ç»ˆç‚¹
 //            return 0;
 //        tp = p;
-//        tp.counts = p.counts+1;         //´Ó¶ÓÁĞÖĞÈ¡³öºó£¬Ò»¶¨»á·¢Éú×ªÏò
+//        tp.counts = p.counts+1;         //ä»é˜Ÿåˆ—ä¸­å–å‡ºåï¼Œä¸€å®šä¼šå‘ç”Ÿè½¬å‘
 //        for(i=0; i<4; i++)
 //        {
 //            nx = p.x + dx[i];
 //            ny = p.y + dy[i];
-//            while(judge(nx,ny))       //²»·¢Éú×ªÏò£¬ÑØÍ¬Ò»·½ÏòÒ»Ö±·ÃÎÊÖÁ¾¡Í·
+//            while(judge(nx,ny))       //ä¸å‘ç”Ÿè½¬å‘ï¼Œæ²¿åŒä¸€æ–¹å‘ä¸€ç›´è®¿é—®è‡³å°½å¤´
 //            {
-//                if(vis[nx][ny]==0)     //µ±¸ÃµØÖ·Î´±»·ÃÎÊ²Å½øÈë¶ÓÁĞ
+//                if(vis[nx][ny]==0)     //å½“è¯¥åœ°å€æœªè¢«è®¿é—®æ‰è¿›å…¥é˜Ÿåˆ—
 //                {
 //                    tp.x = nx;
 //                    tp.y = ny;
@@ -82,6 +82,7 @@
 //    }
 //    return 0;
 //}
+æ‹å¼¯æ¬¡æ•°é—®é¢˜
 #include<cstdio>
 #include<cstring>
 #include<queue>
@@ -137,7 +138,7 @@ void bfs(int x, int y)
                     tmp2.step = tmp.step+1;
                     if(tmp2.x == ex && tmp2.y == ey && tmp2.step<=limit)
                     {
-                        printf("yes\n");
+                        puts("yes");
                         return;
                     }
                     que.push(tmp2);
@@ -147,7 +148,7 @@ void bfs(int x, int y)
             }
         }
     }
-    printf("no\n");
+    puts("no");
     return;
 }
  
@@ -160,7 +161,7 @@ int main(){
         for(int i = 1; i <= m; i++)
             for(int j=1;j<=n;j++)
             cin>>G[i][j];
-        scanf("%d%d%d%d%d", &limit, &sy, &sx, &ey, &ex);
+        scanf("%d%d%d%d%d", &limit, &sy, &sx, &ey, &ex);  //è¾“å…¥waäº†å¥½å‡ æ¬¡ã€‚ã€‚ã€‚
         bfs(sx, sy);
     }
     return 0;
