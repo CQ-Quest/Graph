@@ -1,4 +1,4 @@
-#路径压缩查询
+# 路径压缩查询
 
     int find(int x){
        if(f[x]!=x) f[x]=find(f[x]);
@@ -33,7 +33,7 @@
        return r
        }
        
-#合并
+# 合并
     
     void merge(int x,int y){
        x=find(x);
